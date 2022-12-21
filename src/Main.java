@@ -18,7 +18,7 @@ public class Main {
                     int menu = scanner.nextInt();
                     switch (menu) {
                         case 1:
-                            inputTask(scanner);
+                            DailyPlanner.inputTask(planer);
                             break;
                         case 2:
                             DailyPlanner.delete(planer);
@@ -35,12 +35,6 @@ public class Main {
                 }
             }
         }
-    }
-
-    private static void inputTask(Scanner scanner) {
-        System.out.print("Введите название задачи: ");
-        String taskName = scanner.next();
-        System.out.println("Вы успешно добавили задачу " + taskName);
     }
 
     private static void printMenu() {

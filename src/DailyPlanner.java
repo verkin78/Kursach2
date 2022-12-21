@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Scanner;
@@ -65,6 +66,21 @@ public class DailyPlanner {
         } else {
             this.repeatability = repeatability;
         }
+    }
+
+    public static void inputTask(Map<DailyPlanner, Integer> planer) {
+        Scanner scanner = new Scanner(System.in);
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        System.out.print("Введите название задачи: ");
+        String taskName = scanner.next();
+        System.out.println("Введите описание");
+        String description = scanner.next();
+        System.out.println("Введите дату");
+        LocalDate date = LocalDate.parse(scanner.next(), dateTimeFormatter);
+        System.out.println("Введите ид задачи");
+        Integer id = scanner.nextInt();
+        planer.put(new DailyPlanner(taskName, description, Type.WORKED, Repeatability.SINGLE, date), id);
+        System.out.println("Вы добавили задачу : \n"+planer);
     }
 
     @Override
