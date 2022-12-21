@@ -20,19 +20,19 @@ public enum Repeatability {
 
     public static void checkRepeat(Repeatability repeatability) {
         if (repeatability == SINGLE) {
-            System.out.println("Повторяемость однократная");
+            System.out.println("Однократно");
         }
         if (repeatability == DAILY) {
-            System.out.println("Следующее повторение - " + LocalDateTime.now().plusDays(1));
+            System.out.println("Повторить - " + LocalDateTime.now().plusDays(1));
         }
         if (repeatability == WEEKLY) {
-            System.out.println("Следующее повторение - " + LocalDateTime.now().plusDays(7));
+            System.out.println("Повторить - " + LocalDateTime.now().plusDays(7));
         }
         if (repeatability == MONTHLY) {
-            System.out.println("Следующее повторение - " + LocalDateTime.now().plusMonths(1));
+            System.out.println("Повторить - " + LocalDateTime.now().plusMonths(1));
         }
         if (repeatability == ANNUAL) {
-            System.out.println("Следующее повторение - " + LocalDateTime.now().plusYears(1));
+            System.out.println("Повторить - " + LocalDateTime.now().plusYears(1));
         }
     }
 }

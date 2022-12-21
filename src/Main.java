@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Map<DailyPlanner, Integer> planer = new HashMap<>();
-        planer.put(new DailyPlanner("Курсовая", "Нужно сдать как можно скорее", Type.WORKED,
+        planer.put(new DailyPlanner("Приготовить обед", "Успеть к обеду", Type.WORKED,
                 Repeatability.SINGLE,
-                LocalDate.of(2022, 12, 20)), 1);
+                LocalDate.of(2022, 12, 21)), 1);
         try (Scanner scanner = new Scanner(System.in)) {
             label:
             while (true) {
@@ -40,7 +40,7 @@ public class Main {
     private static void inputTask(Scanner scanner) {
         System.out.print("Введите название задачи: ");
         String taskName = scanner.next();
-        System.out.println("Вы добавили задачу " + taskName);
+        System.out.println("Вы успешно добавили задачу " + taskName);
     }
 
     private static void printMenu() {

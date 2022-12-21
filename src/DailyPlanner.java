@@ -17,7 +17,7 @@ public class DailyPlanner {
                         Repeatability repeatability,
                         LocalDate localDate) {
         if (heading == null) {
-            throw new IllegalArgumentException("Добавьте название!!!");
+            throw new IllegalArgumentException("Добавьте название задачи!!!");
         } else {
             this.heading = heading;
         }
@@ -41,7 +41,7 @@ public class DailyPlanner {
 
     public void setDescription(String description) {
         if (description == null) {
-            throw new IllegalArgumentException("Описание не заполнено");
+            throw new IllegalArgumentException("Описание задачи не заполнено");
         } else {
             this.description = description;
         }
@@ -98,7 +98,7 @@ public class DailyPlanner {
         System.out.println("Введите дату: ");
         Scanner scanner = new Scanner(System.in);
         LocalDate date = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-        System.out.println("Список задач на день6");
+        System.out.println("Список задач на деньь");
         for (DailyPlanner planner : planer.keySet()) {
             if (planner.getLocalDate().equals(date)) {
                 System.out.println(planer);
@@ -107,11 +107,11 @@ public class DailyPlanner {
     }
 
     public static void delete(Map<DailyPlanner, Integer> planer) {
-        System.out.println("Введите значение для удаления");
+        System.out.println("Введите номер пункта для удаления");
         Scanner scanner = new Scanner(System.in);
         for (DailyPlanner planner : planer.keySet()) {
             planer.remove(planner, scanner.nextInt());
-            System.out.println("Вы успешно удалил обьект ");
+            System.out.println("Вы успешно удалил задачу");
         }
     }
 }
