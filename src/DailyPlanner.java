@@ -75,11 +75,16 @@ public class DailyPlanner {
         String taskName = scanner.next();
         System.out.println("Введите описание");
         String description = scanner.next();
-        System.out.println("Введите дату");
+
+        System.out.println("Введите тип задачи");
+        Type type = Type.valueOf(scanner.next());
+        System.out.println("Введите повторяемость");
+        Repeatability repeatability1 = Repeatability.valueOf(scanner.next());
+        System.out.println("Введите дату выполнения");
         LocalDate date = LocalDate.parse(scanner.next(), dateTimeFormatter);
         System.out.println("Введите ид задачи");
         Integer id = scanner.nextInt();
-        planer.put(new DailyPlanner(taskName, description, Type.WORKED, Repeatability.SINGLE, date), id);
+        planer.put(new DailyPlanner(taskName, description, type, repeatability1, date), id);
         System.out.println("Вы добавили задачу : \n"+planer);
     }
 
